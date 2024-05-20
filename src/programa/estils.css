@@ -2,6 +2,7 @@
     -fx-font-family: impact;
     -fx-font-size: 12px;
     -fx-alignment: center center;
+    -fx-background-color: #fff;
 }
 
 .tiquet-entrada{
@@ -13,10 +14,8 @@ Label{
     -fx-font-family: impact;
 }
 
-.tiquet-entrada .matricula{
-    -fx-pref-width: 225;
+.eti-tiquet{
     -fx-font-size: 18px;
-    -fx-alignment: center center;
 }
 
 .button{
@@ -33,4 +32,38 @@ Label{
     -fx-pref-height: 50px;
     -fx-font-family: impact;
     -fx-font-size: 18px;
+}
+
+.boto-sortir{
+    -fx-background-color: #F1948A;
+    -fx-border-color: #E74C3C;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 50px;
+    -fx-font-family: impact;
+    -fx-font-size: 18px;
+}
+
+.boto-obtenir-tiquet{
+    -fx-background-color: #F4D03F;
+    -fx-border-color: #F39C12;
+	-fx-effect: dropshadow(three-pass-box, rgba(248, 196, 113, 1) , 100, 0, 0, 0);
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-font-family: impact;
+    -fx-font-size: 18px;
+}
+
+.contenidor-boto{
+    -fx-background-color: #283747;
+    -fx-background-radius: 5px;
+}
+
+.eti-numero-placa{
+    -fx-text-fill: #fff;
+    -fx-font-size: 2em;
+}
+
+.eti-info-cotxe-placa{
+    -fx-text-fill: #B3B6B7  ;
+    -fx-font-size: 2em;
 }

@@ -13,7 +13,7 @@ public class Parking {
         }
     }
 
-    public void afegirCotxe(Cotxe cotxeP, int nPlacaP){
+    public void entrarCotxe(Cotxe cotxeP, int nPlacaP){
         if(!placaOcupada(nPlacaP)){
             places[nPlacaP].setCotxe(cotxeP);
             places[nPlacaP].setHoraEntrada(LocalTime.now());
@@ -42,6 +42,10 @@ public class Parking {
     public Placa getPlaca(int nPlacaP){
         return places[nPlacaP];
     }
+    
+    public int getNPlacesOcupades() {
+    	return 1;
+    }
 
     //==================================
 
@@ -57,5 +61,17 @@ public class Parking {
             else aux++;
         }
         return ple;
+    }
+    
+    public boolean matriculaRepetida(String matricula) {
+    	boolean fi=false;
+    	int aux=0;
+    	while(!fi&&aux<N_PLACES) {
+    		if(places[aux].getCotxe()!=null) {
+        		if(places[aux].getCotxe().getMatricula().equals(matricula))fi=true;
+    		}
+        	aux++;
+    	}
+    	return fi;
     }
 }

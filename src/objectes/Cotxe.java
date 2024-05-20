@@ -2,16 +2,15 @@ package objectes;
 
 public class Cotxe {
     private String matricula;
-    private String marca;
+    private ColorCotxe color;
     private String model;
 
-    Cotxe(String matriculaP, String marcaP, String modelP){
+    public Cotxe(String matriculaP, ColorCotxe colorP){
         this.matricula=matriculaP;
-        this.marca=marcaP;
-        this.model=modelP;
+        this.color=colorP;
     }
 
     public String getMatricula(){return this.matricula;}
-    public String getMarca(){return this.marca;}
+    public ColorCotxe getColor(){return this.color;}
     public String getModel(){return this.model;}
 }
