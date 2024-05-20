@@ -10,7 +10,7 @@
             "request": "launch",
             "vmArgs": "--module-path 'C:/Program Files/Java/javafx-sdk-21.0.2/lib' --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web",
             "mainClass": "programa.Main",
-            "projectName": "Practica10_3191cfa5"
+            "projectName": "Practica10"
         },
         {
             "type": "java",

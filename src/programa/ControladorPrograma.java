@@ -19,11 +19,12 @@ import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
+import objectes.Parking;
 
 public class ControladorPrograma implements Initializable{
 
     @FXML
-    private Pane pContenidorParking;
+    private Pane pContenidorEntrada, pContenidorParking;
 
     @FXML
     private AnchorPane root;
@@ -31,17 +32,24 @@ public class ControladorPrograma implements Initializable{
     @FXML
     private ImageView ivCotxeParking;
 
+    private Parking parking=new Parking();
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        ivCotxeParking.setLayoutX(-200);
-        moureCotxe(3,1);
+
+
+        moureCotxe(3);
     }
 
     @FXML
-    private void moureCotxe(int f, int b){
+    private void moureCotxe(int nPlaca){
+        int b=0;
+        if(nPlaca>parking.N_PLACES/2)b=1;
+        int f=nPlaca-(4*b);
         int[] files={193,296,402,505};
         int[][] bloc={{500,300},{700,900}};
         // Create the Path
+        ivCotxeParking.setLayoutX(-200);
         Path path = new Path();
         path.getElements().add(new MoveTo(0, 0));
         path.getElements().add(new LineTo(bloc[b][0], 0));
@@ -61,4 +69,8 @@ public class ControladorPrograma implements Initializable{
         pathTransition.play();
     }
 
+
+    private String generarMatricula(){
+        return "1234BBB";
+    }
 }

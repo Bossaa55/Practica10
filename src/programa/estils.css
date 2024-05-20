@@ -1,6 +1,36 @@
 .matricula{
     -fx-font-family: impact;
-    -fx-pref-width: 100;
-    -fx-font-size: 16px;
+    -fx-font-size: 12px;
     -fx-alignment: center center;
+}
+
+.tiquet-entrada{
+    -fx-background-color: white;
+    -fx-pref-height: 250;
+}
+
+Label{
+    -fx-font-family: impact;
+}
+
+.tiquet-entrada .matricula{
+    -fx-pref-width: 225;
+    -fx-font-size: 18px;
+    -fx-alignment: center center;
+}
+
+.button{
+    -fx-background-radius: 5px;
+    -fx-background-insets: 1px;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+.boto-entrar{
+    -fx-background-color: #82E0AA;
+    -fx-border-color: #27AE60;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 50px;
+    -fx-font-family: impact;
+    -fx-font-size: 18px;
 }
