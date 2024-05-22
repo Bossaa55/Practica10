@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="105.81035mm"
+   height="149.60931mm"
+   viewBox="0 0 105.81035 149.60931"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="caixer.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1"
+     inkscape:cx="288"
+     inkscape:cy="519.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-64.192468,-61.577936)">
+    <rect
+       style="fill:#808080;stroke-width:0.264583"
+       id="rect1"
+       width="94.030891"
+       height="141.81081"
+       x="64.216225"
+       y="69.37645" />
+    <path
+       style="fill:#4d4d4d;stroke-width:0.264583"
+       d="m 79.892893,69.377857 2.79e-4,-7.447815 90.109638,-0.350202 -11.75391,7.800899 z"
+       id="path1"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#333333;stroke-width:0.265083"
+       d="m 64.192464,69.37564 15.701815,-7.446805 v 7.452777 z"
+       id="path2"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#333333;stroke-width:0.264583"
+       d="M 158.24304,69.380955 170.00069,61.577935 169.50233,203 l -11.25747,8.18656 z"
+       id="path3"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#1a1a1a;fill-opacity:1;stroke-width:0.264583"
+       id="rect3"
+       width="43.59166"
+       height="23.853804"
+       x="87.089775"
+       y="176.79878" />
+    <path
+       style="fill:#333333;fill-opacity:1;stroke-width:0.264583"
+       d="m 87.089793,200.65413 11.168783,-6.43538 h 32.422854 l 0.009,6.43676 z"
+       id="path4"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#4d4d4d;fill-opacity:1;stroke-width:0.306637"
+       id="rect4"
+       width="32.423473"
+       height="17.414957"
+       x="98.255234"
+       y="176.80267" />
+    <g
+       id="g6"
+       transform="translate(-1.3229167,-0.26458333)">
+      <rect
+         style="fill:#666666;fill-opacity:1;stroke-width:0.264583"
+         id="rect5"
+         width="48.484894"
+         height="4.8947916"
+         x="84.997398"
+         y="174.49271" />
+      <path
+         style="fill:#4d4d4d;fill-opacity:1;stroke-width:0.264583"
+         d="m 84.996659,174.49273 7.216944,-1.27897 45.381477,-0.0234 -4.10868,1.30489 z"
+         id="path5"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="fill:#333333;fill-opacity:1;stroke-width:0.264583"
+         d="m 133.47899,174.49526 4.07996,-1.32032 -0.003,4.23615 -4.07848,1.97328 z"
+         id="path6"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;fill:#ffffff;stroke-width:0"
+       x="72.303787"
+       y="95.966736"
+       id="text1"><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;stroke-width:0"
+         x="72.303787"
+         y="95.966736"
+         id="tspan2">Tira les monedes aquí</tspan></text>
+    <g
+       id="g7"
+       transform="translate(-0.94159056,1.683798)">
+      <rect
+         style="fill:#ffffff;stroke-width:0"
+         id="rect6"
+         width="5.0270834"
+         height="7.1437497"
+         x="109.65972"
+         y="78.213913"
+         ry="0.045664206" />
+      <path
+         sodipodi:type="star"
+         style="fill:#ffffff;stroke-width:0"
+         id="path7"
+         inkscape:flatsided="true"
+         sodipodi:sides="3"
+         sodipodi:cx="100.0125"
+         sodipodi:cy="93.397919"
+         sodipodi:r1="5.8087945"
+         sodipodi:r2="2.904397"
+         sodipodi:arg1="0.52359878"
+         sodipodi:arg2="1.5707963"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 105.04306,96.302316 -10.061127,0 5.030567,-8.713192 z"
+         inkscape:transform-center-x="1.26e-06"
+         inkscape:transform-center-y="-1.4521998"
+         transform="translate(12.160764,-17.960512)" />
+    </g>
+    <g
+       id="g7-2"
+       transform="translate(28.955303,1.6833878)">
+      <rect
+         style="fill:#ffffff;stroke-width:0"
+         id="rect6-2"
+         width="5.0270834"
+         height="7.1437497"
+         x="109.65972"
+         y="78.213913"
+         ry="0.045664206" />
+      <path
+         sodipodi:type="star"
+         style="fill:#ffffff;stroke-width:0"
+         id="path7-0"
+         inkscape:flatsided="true"
+         sodipodi:sides="3"
+         sodipodi:cx="100.0125"
+         sodipodi:cy="93.397919"
+         sodipodi:r1="5.8087945"
+         sodipodi:r2="2.904397"
+         sodipodi:arg1="0.52359878"
+         sodipodi:arg2="1.5707963"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 105.04306,96.302316 -10.061127,0 5.030567,-8.713192 z"
+         inkscape:transform-center-x="1.26e-06"
+         inkscape:transform-center-y="-1.4521998"
+         transform="translate(12.160764,-17.960512)" />
+    </g>
+    <g
+       id="g7-4"
+       transform="translate(-30.941697,1.6838626)">
+      <rect
+         style="fill:#ffffff;stroke-width:0"
+         id="rect6-9"
+         width="5.0270834"
+         height="7.1437497"
+         x="109.65972"
+         y="78.213913"
+         ry="0.045664206" />
+      <path
+         sodipodi:type="star"
+         style="fill:#ffffff;stroke-width:0"
+         id="path7-4"
+         inkscape:flatsided="true"
+         sodipodi:sides="3"
+         sodipodi:cx="100.0125"
+         sodipodi:cy="93.397919"
+         sodipodi:r1="5.8087945"
+         sodipodi:r2="2.904397"
+         sodipodi:arg1="0.52359878"
+         sodipodi:arg2="1.5707963"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 105.04306,96.302316 -10.061127,0 5.030567,-8.713192 z"
+         inkscape:transform-center-x="1.26e-06"
+         inkscape:transform-center-y="-1.4521998"
+         transform="translate(12.160764,-17.960512)" />
+    </g>
+    <rect
+       style="fill:#1a1a1a;stroke-width:0"
+       id="rect7"
+       width="50.250828"
+       height="31.056719"
+       x="86.106255"
+       y="124.75349"
+       ry="0.045664206" />
+    <rect
+       style="fill:#ffffff;stroke-width:0"
+       id="rect8"
+       width="44.801941"
+       height="27.689123"
+       x="88.830696"
+       y="126.43729"
+       ry="0.040712666" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;fill:#ff0000;stroke-width:0"
+       x="91.4403"
+       y="153.22562"
+       id="text8"><tspan
+         sodipodi:role="line"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0"
+         x="91.4403"
+         y="153.22562"
+         id="tspan9">Només s'accepten monedes</tspan></text>
+  </g>
+</svg>

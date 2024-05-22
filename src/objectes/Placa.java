@@ -1,5 +1,6 @@
 package objectes;
 
+import java.time.Duration;
 import java.time.LocalTime;
 
 public class Placa {
@@ -20,4 +21,9 @@ public class Placa {
     public LocalTime getHoraEntrada(){return this.horaEntrada;}
     public LocalTime getHoraSortida(){return this.horaSortida;}
     public int getNPlaca(){return this.nPlaca;}
+    public int getTotalPagar(){
+        Duration duration=Duration.between(horaEntrada, horaSortida);
+        int segons=(int) duration.toSeconds();
+        return segons*5;
+    }
 }

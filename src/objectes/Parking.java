@@ -1,6 +1,7 @@
 package objectes;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class Parking {
     public static final int N_PLACES=8;
@@ -18,6 +19,10 @@ public class Parking {
             places[nPlacaP].setCotxe(cotxeP);
             places[nPlacaP].setHoraEntrada(LocalTime.now());
         }
+    }
+    
+    public void sortidaCotxe(int nPlaca){
+        places[nPlaca].setHoraSortida(LocalTime.now());
     }
 
     public void treureCotxe(int nPlacaP){
@@ -45,6 +50,14 @@ public class Parking {
     
     public int getNPlacesOcupades() {
     	return 1;
+    }
+
+    public ArrayList<Integer> getPlacesOcupades(){
+        ArrayList<Integer> p=new ArrayList<Integer>();
+        for (int i = 0; i < places.length; i++) {
+            if(places[i].getCotxe()!=null)p.add(i);
+        }
+        return p;
     }
 
     //==================================
