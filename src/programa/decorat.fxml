@@ -241,6 +241,7 @@
                         <Image url="@../../imatges/monedes/1cent.png" />
                      </image>
                   </ImageView>
+                  <Button layoutX="105.0" layoutY="501.0" mnemonicParsing="false" onAction="#sortirCaixer" prefWidth="161.0" styleClass="boto-continuar" text="CONTINUAR" />
                </children>
             </Pane>
             <ImageView fitHeight="437.0" fitWidth="304.0" layoutX="482.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
@@ -255,11 +256,46 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="etiCaixerPagat" alignment="TOP_LEFT" layoutX="602.0" layoutY="340.0" prefHeight="30.0" prefWidth="80.0" text="000.00€">
+            <Label fx:id="etiCaixerPagat" alignment="TOP_LEFT" layoutX="602.0" layoutY="340.0" prefHeight="30.0" prefWidth="80.0" text="0.00€">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
+            <Button fx:id="btnCaixerPagar" disable="true" layoutX="552.0" layoutY="384.0" mnemonicParsing="false" onAction="#pagar" prefWidth="161.0" styleClass="boto-entrar" text="PAGAR" />
+         </children>
+      </Pane>
+      <Pane fx:id="pContenidorSortidaFinal" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../imatges/entrada-parking.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ivSortidaCotxe1" fitHeight="319.0" fitWidth="304.0" layoutX="184.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imatges/front-view/vermell.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="etiSortidaFinalCotxeMatricula" layoutX="310.0" layoutY="517.0" prefHeight="16.0" prefWidth="52.0" styleClass="matricula" text="1234 AAA" />
+            <Pane fx:id="pTiquetSortida1" layoutX="550.0" layoutY="350.0" prefHeight="283.0" prefWidth="225.0" styleClass="tiquet-entrada">
+               <children>
+                  <Label layoutX="16.0" layoutY="10.0" text="PARQUINGS BOSSACOMA">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="etiSortidaFinalTiquetSortidaMatricula" layoutX="75.0" layoutY="49.0" prefHeight="16.0" prefWidth="76.0" styleClass="eti-tiquet" text="1234 AAA" />
+                  <Label alignment="CENTER_RIGHT" layoutY="98.0" prefHeight="22.0" prefWidth="112.0" styleClass="eti-tiquet" text="Hora Entrada:" />
+                  <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="72.0" prefHeight="22.0" prefWidth="100.0" styleClass="eti-tiquet" text="Nº Plaça: " />
+                  <Label fx:id="etiSortidaFinalTiquetSortidaPlaca" layoutX="114.0" layoutY="72.0" prefHeight="22.0" prefWidth="100.0" styleClass="eti-tiquet" text="00" />
+                  <Label fx:id="etiSortidaFinalTiquetSortidaHoraEntrada" layoutX="114.0" layoutY="98.0" prefHeight="22.0" prefWidth="100.0" styleClass="eti-tiquet" text="00:00" />
+                  <Label alignment="CENTER_RIGHT" layoutY="123.0" prefHeight="22.0" prefWidth="112.0" styleClass="eti-tiquet" text="Hora Sortida:" />
+                  <Label fx:id="etiSortidaFinalTiquetSortidaHoraSortida" layoutX="114.0" layoutY="123.0" prefHeight="22.0" prefWidth="100.0" styleClass="eti-tiquet" text="00:00" />
+                  <Label alignment="CENTER_RIGHT" layoutY="148.0" prefHeight="22.0" prefWidth="112.0" styleClass="eti-tiquet" text="Total Pagar:" />
+                  <Label fx:id="etiSortidaFinalTiquetSortidaTotalPagar" layoutX="114.0" layoutY="148.0" prefHeight="22.0" prefWidth="100.0" styleClass="eti-tiquet" text="00.00€" />
+                  <Button layoutX="12.0" layoutY="178.0" mnemonicParsing="false" onAction="#sortidaFinalContinuar" prefWidth="161.0" styleClass="boto-continuar" text="CONTINUAR" />
+               </children>
+            </Pane>
          </children>
       </Pane>
    </children>

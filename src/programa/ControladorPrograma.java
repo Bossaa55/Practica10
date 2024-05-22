@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -47,7 +48,7 @@ public class ControladorPrograma implements Initializable{
     private AnchorPane root;
     
     @FXML
-    private Pane pContenidorEntrada, pContenidorParking, pContenidorSortida, pContenidorCaixer;
+    private Pane pContenidorEntrada, pContenidorParking, pContenidorSortida, pContenidorCaixer, pContenidorSortidaFinal;
 
     //==============ENTRADA==============
     
@@ -91,7 +92,17 @@ public class ControladorPrograma implements Initializable{
 
     @FXML
     private Label etiCaixerTotalPagar, etiCaixerPagat;
+    
+    @FXML
+    private Button btnCaixerPagar;
 
+    //==============SORTIDA FINAL==============
+    
+    @FXML
+    private Label etiSortidaFinalCotxeMatricula, etiSortidaFinalTiquetSortidaMatricula, etiSortidaFinalTiquetSortidaPlaca, 
+    				etiSortidaFinalTiquetSortidaHoraEntrada, etiSortidaFinalTiquetSortidaHoraSortida,
+    				etiSortidaFinalTiquetSortidaTotalPagar; 
+    
     
     private Parking parking=new Parking();
     private String[] matricules;
@@ -100,6 +111,7 @@ public class ControladorPrograma implements Initializable{
     	System.out.printf("%5d%n",25);
     	System.out.printf("%5d%n",132);
     	System.out.printf("%5d%n",9);
+    	obtenirMonedesCanvi(185);
     	try {
 			ivCotxeParking.setImage(new Image(new FileInputStream("imatges/top-view/cotxe-cel.png")));
 		} catch (Exception e) {
@@ -120,6 +132,7 @@ public class ControladorPrograma implements Initializable{
     	pContenidorParking.setVisible(false);
         pContenidorSortida.setVisible(false);
         pContenidorCaixer.setVisible(false);
+        pContenidorSortidaFinal.setVisible(false);
     	entrada();
     }
     
@@ -131,6 +144,7 @@ public class ControladorPrograma implements Initializable{
     	pContenidorParking.setVisible(false);
         pContenidorSortida.setVisible(false);
         pContenidorCaixer.setVisible(false);
+        pContenidorSortidaFinal.setVisible(false);
     	pTiquetEntrada.setTranslateY(250);
     	
     	Random aleatori = new Random();
@@ -191,14 +205,54 @@ public class ControladorPrograma implements Initializable{
     			}
     		}
 		}
-    	
+    	ivCotxeParking.setVisible(false);
     	moureCotxe(Integer.parseInt(etiEntradaTiquetPlaca.getText())-1,etiEntradaCotxeMatricula.getText(),etiEntradaTiquetHora.getText());
     }
     
     //==============PARKING==============
 
     @FXML
+    private void canviarPantallaParking() {
+    	Random aleatori = new Random();
+		int a=aleatori.nextInt(100);
+		if((a<65||parking.getPlacesOcupades().size()==1)&&!parking.parkingPle()) {
+			btnParkingEntrar.setVisible(true);
+			btnParkingSortir.setVisible(false);
+		}else {
+			btnParkingEntrar.setVisible(false);
+			btnParkingSortir.setVisible(true);
+		}
+		
+
+    	pContenidorEntrada.setVisible(false);
+    	pContenidorParking.setVisible(true);
+        pContenidorSortida.setVisible(false);
+        pContenidorCaixer.setVisible(false);
+        pContenidorSortidaFinal.setVisible(false);
+    	
+    	for (int i = 0; i < ivsParkingCotxes.length; i++) {
+    		if(i!=Integer.valueOf(etiEntradaTiquetPlaca.getText())-1) {
+    			if(parking.getPlaca(i).getCotxe()!=null) {
+    				try {
+    					ivsParkingCotxes[i].setImage(new Image(new FileInputStream("imatges/top-view/"+parking.getPlaca(i).getCotxe().getColor().getNom()+".png")));
+    				} catch (Exception e) {
+    				}
+    				ivsParkingCotxes[i].setVisible(true);
+    				etisParkingInfoCotxe[i][0].setOpacity(1);
+    				etisParkingInfoCotxe[i][1].setOpacity(1);
+    			}else {
+    				ivsParkingCotxes[i].setVisible(false);
+    				etisParkingInfoCotxe[i][0].setOpacity(0);
+    				etisParkingInfoCotxe[i][1].setOpacity(0);
+    			}
+    		}
+		}
+    	ivCotxeParking.setVisible(false);
+    }
+    
+    @FXML
     private void moureCotxe(int nPlaca, String matricula, String hora){
+    	ivCotxeParking.setVisible(true);
         int b=0;
         if(nPlaca>=parking.N_PLACES/2)b=1;
         int f=nPlaca-(4*b);
@@ -285,8 +339,8 @@ public class ControladorPrograma implements Initializable{
         etiSortidaCotxeMatricula.setText(parking.getPlaca(placa).getCotxe().getMatricula());
         etiSortidaTiquetEntradaMatricula.setText(parking.getPlaca(placa).getCotxe().getMatricula());
         etiSortidaTiquetSortidaMatricula.setText(parking.getPlaca(placa).getCotxe().getMatricula());
-        etiSortidaTiquetEntradaPlaca.setText(String.format("%02d", placa));
-        etiSortidaTiquetSortidaPlaca.setText(String.format("%02d", placa));
+        etiSortidaTiquetEntradaPlaca.setText(String.format("%02d", placa+1));
+        etiSortidaTiquetSortidaPlaca.setText(String.format("%02d", placa+1));
     	etiSortidaTiquetEntradaHora.setText(String.format("%02d:%02d",parking.getPlaca(placa).getHoraEntrada().getHour(), parking.getPlaca(placa).getHoraEntrada().getMinute()));
         etiSortidaTiquetSortidaHoraEntrada.setText(String.format("%02d:%02d",parking.getPlaca(placa).getHoraEntrada().getHour(), parking.getPlaca(placa).getHoraEntrada().getMinute()));
         etiSortidaTiquetSortidaHoraSortida.setText(String.format("%02d:%02d",parking.getPlaca(placa).getHoraSortida().getHour(), parking.getPlaca(placa).getHoraSortida().getMinute()));
@@ -315,19 +369,35 @@ public class ControladorPrograma implements Initializable{
         pContenidorParking.setVisible(false);
         pContenidorSortida.setVisible(false);
         pContenidorCaixer.setVisible(true);
+        pContenidorSortidaFinal.setVisible(false);
 
-        int nPlaca=Integer.parseInt(etiSortidaTiquetEntradaPlaca.getText());
+        int nPlaca=Integer.parseInt(etiSortidaTiquetEntradaPlaca.getText())-1;
 
         etiCaixerTotalPagar.setText(formatarPagament(parking.getPlaca(nPlaca).getTotalPagar())+"€");
+        etiCaixerPagat.setText("0,00€");
+        totalPagat=0;
+        btnCaixerPagar.setVisible(true);
+        btnCaixerPagar.setDisable(true);
+    }
+    
+    @FXML
+    void pagar() {
+    	int canvi=totalPagat-parking.getPlaca(Integer.parseInt(etiSortidaTiquetEntradaPlaca.getText())-1).getTotalPagar();
+    	int[] monedes=obtenirMonedesCanvi(canvi);
+    	btnCaixerPagar.setVisible(false);
     }
 
     @FXML
     private void actualitzarPagat(){
         etiCaixerPagat.setText(formatarPagament(totalPagat)+"€");
+        if(totalPagat>=parking.getPlaca(Integer.parseInt(etiSortidaTiquetEntradaPlaca.getText())-1).getTotalPagar()){
+        	btnCaixerPagar.setDisable(false);
+        }
     }
 
     private double initialX;
     private double initialY;
+    private int valorMonedaMoguent;
     private ArrayList<ImageView> monedesVolant=new ArrayList<ImageView>();
     private ArrayList<Integer> valorMonedesVolant=new ArrayList<Integer>();
     private int totalPagat=0;
@@ -337,42 +407,42 @@ public class ControladorPrograma implements Initializable{
 
     @FXML
     void monedaMousePressed200(MouseEvent event) {
-        valorMonedesVolant.add(200);
+    	valorMonedaMoguent=200;
         monedaMousePressed(event, 200);
     }
     @FXML
     void monedaMousePressed100(MouseEvent event) {
-        valorMonedesVolant.add(100);
+    	valorMonedaMoguent=100;
         monedaMousePressed(event, 100);
     }
     @FXML
     void monedaMousePressed50(MouseEvent event) {
-        valorMonedesVolant.add(50);
+    	valorMonedaMoguent=50;
         monedaMousePressed(event, 50);
     }
     @FXML
     void monedaMousePressed20(MouseEvent event) {
-        valorMonedesVolant.add(20);
+    	valorMonedaMoguent=20;
         monedaMousePressed(event, 20);
     }
     @FXML
     void monedaMousePressed10(MouseEvent event) {
-        valorMonedesVolant.add(10);
+    	valorMonedaMoguent=10;
         monedaMousePressed(event, 10);
     }
     @FXML
     void monedaMousePressed5(MouseEvent event) {
-        valorMonedesVolant.add(5);
+    	valorMonedaMoguent=5;
         monedaMousePressed(event, 5);
     }
     @FXML
     void monedaMousePressed2(MouseEvent event) {
-        valorMonedesVolant.add(2);
+    	valorMonedaMoguent=2;
         monedaMousePressed(event, 2);
     }
     @FXML
     void monedaMousePressed1(MouseEvent event) {
-        valorMonedesVolant.add(1);
+    	valorMonedaMoguent=1;
         monedaMousePressed(event, 1);
     }
 
@@ -428,6 +498,7 @@ public class ControladorPrograma implements Initializable{
         source.setTranslateY(0);
         if(source.getLayoutX()>=482&&source.getLayoutX()<=786&&source.getLayoutY()<=100){
             monedesVolant.add(source);
+            valorMonedesVolant.add(valorMonedaMoguent);
 
             Timeline timeline=new Timeline();
 
@@ -441,11 +512,10 @@ public class ControladorPrograma implements Initializable{
                     source.setTranslateY(source.getTranslateY()+(75+source.getTranslateY())/30);
                     if(source.getLayoutY()+source.getTranslateY()>300){
                         pPantallaPagamentContenidorMonedes.getChildren().remove(source);
-                        int index=monedesVolant.indexOf(source);
-                        totalPagat+=valorMonedesVolant.get(index);
+                        totalPagat+=valorMonedesVolant.get(0);
                         actualitzarPagat();
-                        monedesVolant.remove(index);
-                        valorMonedesVolant.remove(index);
+                        monedesVolant.remove(0);
+                        valorMonedesVolant.remove(0);
                         timeline.stop();
                     }
                 }
@@ -457,6 +527,54 @@ public class ControladorPrograma implements Initializable{
         }else{
             pPantallaPagamentContenidorMonedes.getChildren().remove(source);
         } 
+    }
+    
+    @FXML
+    private void donarCanvi(int[] monedes) {
+    	
+    }
+    
+    @FXML
+    void sortirCaixer() {
+    	if(!btnCaixerPagar.isVisible()) {
+    		sortidaFinal();
+    	}
+    }
+    
+    //==============SORTIDA FINAL==============
+    
+    @FXML
+    void sortidaFinalContinuar() {
+    	parking.treureCotxe(Integer.parseInt(etiSortidaFinalTiquetSortidaPlaca.getText())-1);
+    	canviarPantallaParking();
+    	System.out.println(parking.getPlacesOcupades().size());
+    }
+    
+    @FXML
+    private void sortidaFinal() {
+        pContenidorEntrada.setVisible(false);
+        pContenidorParking.setVisible(false);
+        pContenidorSortida.setVisible(false);
+        pContenidorCaixer.setVisible(false);
+        pContenidorSortidaFinal.setVisible(true);
+        
+        etiSortidaFinalCotxeMatricula.setText(etiSortidaCotxeMatricula.getText());
+        etiSortidaFinalTiquetSortidaMatricula.setText(etiSortidaTiquetSortidaMatricula.getText());
+        etiSortidaFinalTiquetSortidaPlaca.setText(etiSortidaTiquetSortidaPlaca.getText());
+        etiSortidaFinalTiquetSortidaHoraEntrada.setText(etiSortidaTiquetSortidaHoraEntrada.getText());
+        etiSortidaFinalTiquetSortidaHoraSortida.setText(etiSortidaTiquetSortidaHoraSortida.getText());
+        etiSortidaFinalTiquetSortidaTotalPagar.setText(etiSortidaTiquetSortidaTotalPagar.getText());
+    }
+    
+    private int[] obtenirMonedesCanvi(int canvi) {
+    	int[] valorMonedes= {200,100,50,20,10,5,2,1};
+    	int[] monedes=new int[8];
+    	for (int i = 0; i < monedes.length; i++) {
+    		int resta=canvi%valorMonedes[i];
+			monedes[i]=(canvi-resta)/valorMonedes[i];
+			canvi=resta;
+		}
+    	return monedes;
     }
 
     private String formatarPagament(int pagament){

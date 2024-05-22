@@ -43,6 +43,15 @@ Label{
     -fx-font-size: 18px;
 }
 
+.boto-continuar{
+    -fx-background-color: #85C1E9;
+    -fx-border-color: #2980B9;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 50px;
+    -fx-font-family: impact;
+    -fx-font-size: 18px;
+}
+
 .boto-obtenir-tiquet{
     -fx-background-color: #F4D03F;
     -fx-border-color: #F39C12;
