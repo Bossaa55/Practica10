@@ -76,3 +76,35 @@ Label{
     -fx-text-fill: #B3B6B7  ;
     -fx-font-size: 2em;
 }
+
+.pane-monedes{
+    -fx-background-color: #7a7a7a;
+    -fx-background-radius: 5px;
+    -fx-background-insets: 1;
+    -fx-border-color: #313131;
+    -fx-border-width: 10px;
+    -fx-border-radius: 5px;
+}
+
+.scroll-pane{
+	-fx-background-color:transparent;
+}
+
+.scroll-pane > .viewport {
+	-fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:vertical .thumb {
+   -fx-background-color: #353535;
+   -fx-background-radius: 5em;
+}
